@@ -1,0 +1,287 @@
+/* --- Global Style Adjustments --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    color: #e2e8f0; /* Soft white text */
+    background-color: #0b0f19; /* Deep Premium Dark Background */
+}
+
+/* --- Premium Header Strip --- */
+header {
+    background-color: #111827;
+    border-bottom: 1px solid #1f2937;
+    text-align: center;
+    padding: 25px;
+}
+
+header .logo {
+    font-size: 30px;
+    font-weight: 800;
+    color: #38bdf8; /* Water Cyan Glow color */
+    letter-spacing: 1.5px;
+}
+
+/* --- Elegant Hero Centerpiece --- */
+.hero-center {
+    background: radial-gradient(circle at top, #0f172a, #0b0f19);
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #1f2937;
+}
+
+.hero-center h1 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* --- Moving Text Banner Styling --- */
+marquee.scrolling-text {
+    width: 100%;
+    max-width: 850px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.06);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    margin: 20px auto 0 auto;
+    display: block;
+}
+
+/* --- Glassmorphism Navigation Bar --- */
+.center-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(11, 15, 25, 0.95) !important;
+    border: 1px solid #2d3748;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    gap: 12px;
+    margin-top: 40px;
+    max-width: 95%;
+}
+
+.center-nav a {
+    color: #94a3b8 !important;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.center-nav a:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.center-nav a.active-link {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+}
+
+/* --- Layout Sections --- */
+.content-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #111827;
+    border-radius: 16px;
+    border: 1px solid #1f2937;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.content-section h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-left: 4px solid #0284c7;
+    padding-left: 15px;
+}
+
+.content-section p {
+    color: #94a3b8;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* --- Products Layout Gallery Card Elements --- */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.item-card {
+    background: #1f2937;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #374151;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #0b0f19;
+    border: 1px solid #2d3748;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover .card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.item-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.item-card p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* --- Team Image Container Settings --- */
+.unit-image-container {
+    max-width: 900px;
+    width: 95%;
+    margin: 30px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border: 4px solid #1f2937;
+}
+
+.unit-image-container img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.unit-detailed-text {
+    max-width: 700px;
+    margin: 25px auto;
+    background: #111827;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* --- Formspree Input Grid Column Elements --- */
+.split-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.column-box {
+    flex: 1;
+    min-width: 320px;
+    background: #1f2937;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #374151;
+}
+
+.column-box h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2d3748;
+    padding-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #cbd5e1;
+    text-align: left;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    border: 1px solid #4b5563;
+    border-radius: 8px;
+    background-color: #111827;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #0284c7;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0369a1;
+}
+
+.contact-info ul {
+    list-style: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.contact-info li {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #94a3b8;
+}
+
+.contact-info strong {
+    color: #ffffff;
+}
+
+/* --- Footer Area --- */
+footer {
+    background-color: #090d16;
+    color: #4b5563;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #1f2937;
+    margin-top: 80px;
+}
