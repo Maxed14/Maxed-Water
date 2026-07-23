@@ -33,24 +33,54 @@
             <!-- Left Panel Container: Form Action Submission Desk -->
             <div class="column-box">
                 <h3>Contact Me & Order Placement</h3>
-                <form action="https://formspree.io/f/xaqrpqkv" method="POST">
-                    <label>Your Name:</label>
-                    <input type="text" name="client_name" placeholder="Enter your full name" required>
+                <form action="https://formspree.io" method="POST">
+    <label>Your Name:</label>
+    <input type="text" name="name" placeholder="Enter your full name" required>
 
-                    <label>Your Active Email:</label>
-                    <input type="email" name="client_email" placeholder="Enter your email address" required>
+    <label>Your Email Address:</label>
+    <input type="email" name="email" placeholder="Enter your email address" required>
 
-                    <label>Select Desired Water Size:</label>
-                    <select name="selected_product" required>
-                        <option value="">-- Click to choose water type --</option>
-                        <option value="Sachet Pack">Sachet Bags Pack</option>
-                        <option value="50cl Small Bottle">Small Bottle Water (50cl)</option>
-                        <option value="75cl Normal Bottle">Normal Bottle Water (75cl)</option>
-                        <option value="19L Dispenser Jar">Dispenser Refill Type (19L)</option>
-                    </select>
+    <!-- Updated select options with prices hidden in the attributes for JavaScript calculation -->
+    <label>Select Desired Water Size:</label>
+    <select name="selected_product" id="waterProduct" onchange="calculateTotal()" required>
+        <option value="" data-price="0">-- Click to choose water type --</option>
+        <option value="Sachet Bags Pack" data-price="1200">Sachet Bags Pack (₦1,200)</option>
+        <option value="50cl Small Bottle" data-price="2500">Small Bottle Water 50cl (₦2,500)</option>
+        <option value="75cl Normal Bottle" data-price="3000">Normal Bottle Water 75cl (₦4,500)</option>
+        <option value="19L Dispenser Jar" data-price="1500">Dispenser Refill Type 19L (₦20,000)</option>
+    </select>
 
-                 
-<!-- Add these two lines right here -->
+    <!-- Added quantity input box -->
+    <label>Quantity Needed:</label>
+    <input type="number" name="quantity" id="waterQuantity" min="1" value="1" oninput="calculateTotal()" required>
+
+    <!-- Live calculation summary box -->
+    <div style="margin-top: 20px; padding: 15px; background: rgba(56, 189, 248, 0.1); border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
+        <p style="margin: 0; font-weight: bold; color: #ffffff; font-size: 16px;">Estimated Total: <span style="color: #38bdf8;" id="totalDisplay">₦0</span></p>
+    </div>
+
+    <button type="submit" class="submit-btn">Send Message / Order</button>
+</form>
+
+<!-- Pure Client-Side JavaScript Calculation Engine matching Module 6 guidelines -->
+<script>
+function calculateTotal() {
+    var productSelect = document.getElementById("waterProduct");
+    var quantityInput = document.getElementById("waterQuantity");
+    var totalDisplay = document.getElementById("totalDisplay");
+
+    // Extracting the price from the custom dataset attribute
+    var selectedOption = productSelect.options[productSelect.selectedIndex];
+    var unitPrice = parseInt(selectedOption.getAttribute("data-price")) || 0;
+    var quantity = parseInt(quantityInput.value) || 0;
+
+    var totalCost = unitPrice * quantity;
+
+    // Format the number beautifully using standard Nigerian Naira comma separators
+    totalDisplay.innerText = "₦" + totalCost.toLocaleString();
+}
+</script>
+
 <label>Quantity:</label>
 <input type="number" name="quantity" min="1" placeholder="Enter quantity" required>
 
