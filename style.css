@@ -311,3 +311,15 @@ footer {
         max-height: 300px;
     }
 }
+/* Styling for the product pricing labels */
+.price-badge {
+    background-color: #0284c7;
+    color: #ffffff !important;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
