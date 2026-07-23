@@ -40,11 +40,14 @@ header .logo {
 }
 
 .hero-center h1 {
-    font-size: 38px;
+    font-size: clamp(24px, 6vw, 38px); /* Automatically shrinks text on mobile */
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 15px;
+    width: 90%; /* Keeps text constrained inside boundaries */
+    max-width: 800px;
 }
+
 
 /* --- Moving Text Banner Styling --- */
 marquee.scrolling-text {
@@ -64,14 +67,14 @@ marquee.scrolling-text {
 /* --- Glassmorphism Navigation Bar --- */
 .center-nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* This allows links to wrap into rows on small screens */
     justify-content: center;
     background: rgba(11, 15, 25, 0.95) !important;
     border: 1px solid #2d3748;
-    padding: 10px 20px;
+    padding: 10px 15px; /* Reduced padding for mobile comfort */
     border-radius: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    gap: 12px;
+    gap: 8px; /* Slightly tighter gaps for smaller screens */
     margin-top: 40px;
     max-width: 95%;
 }
@@ -80,11 +83,12 @@ marquee.scrolling-text {
     color: #94a3b8 !important;
     text-decoration: none;
     font-weight: 600;
-    padding: 10px 22px;
+    padding: 8px 16px; /* Slightly smaller button sizing */
     border-radius: 30px;
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: clamp(12px, 3.5vw, 14px); /* Scales font fluidly down to 12px */
 }
+
 
 .center-nav a:hover {
     color: #ffffff !important;
@@ -284,4 +288,26 @@ footer {
     padding: 30px;
     border-top: 1px solid #1f2937;
     margin-top: 80px;
+}
+/* --- Universal Media Breakpoint Queries --- */
+@media (max-width: 768px) {
+    .content-section {
+        margin: 20px auto;
+        padding: 20px; /* Reduces excessive spacing padding on mobile */
+    }
+
+    .split-container {
+        flex-direction: column; /* Force side-by-side elements into vertical stacks */
+        gap: 20px;
+    }
+
+    .column-box {
+        width: 100%;
+        min-width: 100%; /* Resets box restrictions to prevent edge clipping */
+    }
+
+    .unit-image-container img {
+        height: auto; /* Proportional scaling down for large image structures */
+        max-height: 300px;
+    }
 }
